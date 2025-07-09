@@ -153,5 +153,10 @@ GitHub: Sukanya-Wagh
 🚀 Enjoy using the Online BookShop Project!
 
 ## 📸 Final Output Screenshot
-`
-![Image Alt](https://github.com/Sukanya-Wagh/BookShopOnline/blob/ffcc946d4888e6829065387b805205819f27defb/output.png)
+`---
+
+🔚 Final Output (README मध्ये असे दिसेल):
+
+## 📸 Final Output Screenshot
+
+![image alt](https://github.com/Sukanya-Wagh/BookShopOnline/blob/main/output.png?raw=true)
