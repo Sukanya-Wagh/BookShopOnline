@@ -9,7 +9,7 @@ import java.util.List;
 
 public class CategoryDAO {
 
-    // ➕ Add Category
+
     public boolean addCategory(Category category) {
         String sql = "INSERT INTO category (name) VALUES (?)";
         try (Connection conn = DBConnection.getConnection();
@@ -24,7 +24,6 @@ public class CategoryDAO {
         }
     }
 
-    // 📋 Get All Categories
     public List<Category> getAllCategories() {
         List<Category> categories = new ArrayList<>();
         String sql = "SELECT * FROM category";
@@ -48,7 +47,6 @@ public class CategoryDAO {
         return categories;
     }
 
-    // ✏️ Update Category
     public boolean updateCategory(Category category) {
         String sql = "UPDATE category SET name = ? WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -65,7 +63,6 @@ public class CategoryDAO {
         }
     }
 
-    // ❌ Delete Category
     public boolean deleteCategory(int id) {
         String sql = "DELETE FROM category WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
