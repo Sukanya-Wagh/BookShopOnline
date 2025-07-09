@@ -1,33 +1,33 @@
-#  Online BookShop – Java Console Project
+# 📚 Online BookShop – Java Console Project
 
 A Java-based console application that simulates an online bookshop. Users can register, log in, browse books, place orders, and view purchase history. This project is built using **Core Java**, **JDBC**, **PostgreSQL**, and **Maven**.
 
 ---
 
-##  Features
+## ✨ Features
 
--  **User Registration & Login System**
--  **View Available Books** – by category, author, title
--  **Add Books to Cart**
--  **Place Orders**
--  **Order History Viewing**
--  **Sales Report Generation**
--  **Delete or Update Book Information (Admin)**
-- Menu-Driven Console Interface
-
----
-
-##  Technologies Used
-
-- **Core Java** – OOP concepts, collections
-- **JDBC (Java Database Connectivity)** – for database communication
-- **PostgreSQL** – relational database
-- **Maven** – project build & dependency management
-- **Eclipse IDE**
+- 🧾 User Registration & Login System  
+- 📖 View Available Books – by category, author, or title  
+- 🛒 Add Books to Cart  
+- 📦 Place Orders  
+- 📜 View Order History  
+- 📊 Sales Report Generation  
+- 🛠️ Admin Options – Delete or Update Book Information  
+- 📋 Menu-Driven Console Interface  
 
 ---
 
-##  Dependencies
+## 💻 Technologies Used
+
+- ☕ Core Java – OOP concepts, Collections  
+- 🔌 JDBC – Java Database Connectivity  
+- 🗄️ PostgreSQL – Relational Database  
+- 📦 Maven – Build & Dependency Management  
+- 🧠 Eclipse IDE  
+
+---
+
+## 📦 Dependencies
 
 ```xml
 <dependency>
@@ -36,7 +36,7 @@ A Java-based console application that simulates an online bookshop. Users can re
     <version>42.6.0</version>
 </dependency>
 
-##Database Tables.
+🗃️ Database Tables
 
 CREATE TABLE user_details (
     user_id SERIAL PRIMARY KEY,
@@ -80,93 +80,75 @@ CREATE TABLE order_items (
     price NUMERIC(10, 2) NOT NULL
 );
 
-## Prerequisites
-1)Java JDK 
+⚙️ Prerequisites
+1)Java JDK
 
-2)Apache Maven 
+2) Apache Maven
 
-3)PostgreSQL 
+3)PostgreSQL
 
-4)Eclipse IDE / IntelliJ
-
-📁 Directory Structure
+4) Eclipse IDE / IntelliJ
 
 OnlineBookshop/
-
 ├── Main.java
-
 ├── DBConnection.java
-
 ├── dao/
-
 │   ├── UserDAO.java
-
 │   ├── AuthorDAO.java
-
 │   ├── CategoryDAO.java
-
 │   ├── BookDAO.java
-
 │   ├── OrderDAO.java
-
-│   ├── OrderItemDAO.java
-
+│   └── OrderItemDAO.java
 ├── model/
-
 │   ├── User.java
-
 │   ├── Author.java
-
 │   ├── Category.java
-
 │   ├── Book.java
-
 │   ├── Order.java
+│   └── OrderItem.java
+🔧 Project Functionalities
+✅ User & Admin Actions
+Register, Login
 
-│   ├── OrderItem.java
- 
-2) 
+View books (by title, author, category)
 
-✅ all DAO implementations (UserDAO, OrderDAO, etc.)?
- 
-✅ Generate model classes
- 
-✅ Add full ordering flow (order, order items)?
- 
-✅ Add update/delete/search menus
- 
-Add update/delete functionality for books/users
- 
-Add search/filter by category or author
- 
-Create reporting (sales per author/category)
- 
-Search books by title, author, category
- 
-List orders by user
- 
-Filter books by category or author
- 
-🔍 Search books by title
- 
-🧑‍💻 Filter books by author
- 
-📚 Filter books by category
- 
-📦 View orders by user
+Add to cart & Place order
 
-📊 Sales Reporting:
- 
-Total sales per category
- 
-Best-selling books
- 
-Revenue summary
+View personal order history
 
+Admin can add/update/delete books
 
-👩‍💻 Developer
+Admin can manage users
+
+📦 Order System
+Full order flow – including order_items handling
+
+Calculate total price, update stock
+
+🔍 Search & Filter
+Search books by:
+
+🔤 Title
+
+👤 Author
+
+🗂️ Category
+
+Filter books accordingly
+
+📊 Sales Reporting
+📈 Total sales per category
+
+🏆 Best-selling books
+
+💰 Revenue summary
+
+👩‍💻 Developer Info
 Name: Sukanya Wagh
+
 Email: waghsukanya153@gmail.com
+
 GitHub: Sukanya-Wagh
 
-**Enjoy using the Online BookShop Project! 🚀**
+🚀 Enjoy using the Online BookShop Project!
+
