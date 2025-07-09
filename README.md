@@ -155,7 +155,5 @@ GitHub: Sukanya-Wagh
 
 ## 📸 Console Output Screenshot
 
-## 📸 Output Screenshot
-
 ![Final Output](https://github.com/Sukanya-Wagh/BookShopOnline/raw/main/output.PNG)
 
