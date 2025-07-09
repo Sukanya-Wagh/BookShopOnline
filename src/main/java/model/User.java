@@ -9,7 +9,6 @@ public class User {
     private String address;
     private String role;
 
-    // Constructor, getters and setters
     public User() {}
 
     public User(String username, String email, String password, String phone, String address, String role) {
