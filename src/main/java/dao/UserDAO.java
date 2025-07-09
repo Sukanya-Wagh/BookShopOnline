@@ -11,7 +11,7 @@ public class UserDAO {
         this.con = con;
     }
 
-    // Insert User into the database
+  
     public void insertUser(User user) throws SQLException {
         // Check if email already exists
         if (getUserByEmail(user.getEmail()) != null) {
@@ -31,7 +31,6 @@ public class UserDAO {
         }
     }
 
-    // Get User by email (to check if email exists)
     public User getUserByEmail(String email) throws SQLException {
         User user = null;
         String sql = "SELECT * FROM user_details WHERE email = ?";
@@ -74,7 +73,6 @@ public class UserDAO {
         return users;
     }
 
-    // Update User details
     public void updateUser(User user) throws SQLException {
         String sql = "UPDATE user_details SET username=?, email=?, password=?, phone=?, address=?, role=? WHERE user_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
@@ -89,7 +87,6 @@ public class UserDAO {
         }
     }
 
-    // Delete User by ID
     public void deleteUser(int userId) throws SQLException {
         String sql = "DELETE FROM user_details WHERE user_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
