@@ -6,7 +6,7 @@ A Java-based console application that simulates an online bookshop. Users can re
 
 ## ✨ Features
 
-- 🧾 User Registration & Login System  
+- 🧾 User Registration & Login System 
 - 📖 View Available Books – by category, author, or title  
 - 🛒 Add Books to Cart  
 - 📦 Place Orders  
