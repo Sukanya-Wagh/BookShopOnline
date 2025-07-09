@@ -88,7 +88,7 @@ public class OrderDAO {
         return orders;
     }
 
-    // Helper method to extract Order from ResultSet
+   
     private Order extractOrderFromResultSet(ResultSet rs) throws SQLException {
         Order order = new Order();
         order.setOrderId(rs.getInt("order_id"));
