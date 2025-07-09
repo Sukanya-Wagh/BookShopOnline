@@ -25,25 +25,4 @@
 
     </dependencies>
 
-    <!-- Optional: If you want to run Main.java from command line -->
-    <build>
-        <plugins>
-            <!-- Maven Compiler Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-            </plugin>
-
-            <!-- Maven Exec Plugin for running Main class -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <mainClass>main.Main</mainClass> <!-- 🔁 इथे तुझा Main.java चा full path दे -->
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+   
