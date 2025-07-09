@@ -4,7 +4,7 @@ public class Category {
     private int categoryId;
     private String name;
 
-    // Constructors
+   
     public Category() {}
 
     public Category(String name) {
@@ -16,7 +16,6 @@ public class Category {
         this.name = name;
     }
 
-    // Getters & Setters
     public int getCategoryId() {
         return categoryId;
     }
@@ -33,7 +32,7 @@ public class Category {
         this.name = name;
     }
 
-    // toString
+   
     @Override
     public String toString() {
         return "Category{" +
