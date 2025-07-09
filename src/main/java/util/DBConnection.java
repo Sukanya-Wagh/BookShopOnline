@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBConnection {
     private static final String URL = "jdbc:postgresql://localhost:5432/onlinebookshop";
     private static final String USER = "sukanya";
-    private static final String PASSWORD = "root@123"; // change this to real password
+    private static final String PASSWORD = "root@123"; 
 
     public static Connection getConnection() {
         try {
