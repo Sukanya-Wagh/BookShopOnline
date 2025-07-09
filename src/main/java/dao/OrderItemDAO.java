@@ -13,7 +13,6 @@ public class OrderItemDAO {
         this.con = con;
     }
 
-    // Insert OrderItem
     public void insertOrderItem(OrderItem orderItem) throws SQLException {
         String sql = "INSERT INTO order_items (order_id, book_id, quantity, price) VALUES (?, ?, ?, ?)";
         try (PreparedStatement pst = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -31,7 +30,6 @@ public class OrderItemDAO {
         }
     }
 
-    // Get OrderItem by ID
     public OrderItem getOrderItemById(int orderItemId) throws SQLException {
         OrderItem orderItem = null;
         String sql = "SELECT * FROM order_items WHERE order_item_id = ?";
@@ -46,7 +44,6 @@ public class OrderItemDAO {
         return orderItem;
     }
 
-    // Get all OrderItems
     public List<OrderItem> getAllOrderItems() throws SQLException {
         List<OrderItem> items = new ArrayList<>();
         String sql = "SELECT * FROM order_items";
@@ -58,7 +55,7 @@ public class OrderItemDAO {
         return items;
     }
 
-    // Update OrderItem
+   
     public void updateOrderItem(OrderItem orderItem) throws SQLException {
         String sql = "UPDATE order_items SET order_id=?, book_id=?, quantity=?, price=? WHERE order_item_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
@@ -71,7 +68,6 @@ public class OrderItemDAO {
         }
     }
 
-    // Delete OrderItem
     public void deleteOrderItem(int orderItemId) throws SQLException {
         String sql = "DELETE FROM order_items WHERE order_item_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
@@ -80,7 +76,6 @@ public class OrderItemDAO {
         }
     }
 
-    // Helper method to extract OrderItem from ResultSet
     private OrderItem extractOrderItemFromResultSet(ResultSet rs) throws SQLException {
         OrderItem item = new OrderItem();
         item.setOrderItemId(rs.getInt("order_item_id"));
