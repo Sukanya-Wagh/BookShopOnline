@@ -150,10 +150,8 @@ Email: waghsukanya153@gmail.com
 
 GitHub: Sukanya-Wagh
 
-
 🚀 Enjoy using the Online BookShop Project!
 
-## 📸 Console Output Screenshot
+## 📸 Final Output Screenshot
 
-![Final Output](https://github.com/Sukanya-Wagh/BookShopOnline/raw/main/output.png)
-
+![Output](https://github.com/Sukanya-Wagh/BookShopOnline/blob/main/output.png?raw=true)
