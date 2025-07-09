@@ -4,7 +4,7 @@ public class Author {
     private int authorId;
     private String name;
 
-    // Constructors
+ 
     public Author() {}
     
     public Author(String name) {
@@ -16,7 +16,7 @@ public class Author {
         this.name = name;
     }
 
-    // Getters & Setters
+   
     public int getAuthorId() {
         return authorId;
     }
@@ -33,7 +33,7 @@ public class Author {
         this.name = name;
     }
 
-    // toString
+ 
     @Override
     public String toString() {
         return "Author{" +
