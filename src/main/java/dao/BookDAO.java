@@ -13,7 +13,7 @@ public class BookDAO {
         this.con = con;
     }
 
-    // Insert Book
+    
     public void insertBook(Book book) throws SQLException {
         String sql = "INSERT INTO book (title, author_id, category_id, price, quantity, description) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pst = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -33,7 +33,7 @@ public class BookDAO {
         }
     }
 
-    // Get Book by ID
+    
     public Book getBookById(int bookId) throws SQLException {
         Book book = null;
         String sql = "SELECT * FROM book WHERE book_id = ?";
@@ -48,7 +48,7 @@ public class BookDAO {
         return book;
     }
 
-    // Get all Books
+    
     public List<Book> getAllBooks() throws SQLException {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM book ORDER BY title";
@@ -60,7 +60,6 @@ public class BookDAO {
         return books;
     }
 
-    // Search books by title (partial match)
     public List<Book> searchBooksByTitle(String title) throws SQLException {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM book WHERE title ILIKE ?";
@@ -75,7 +74,6 @@ public class BookDAO {
         return books;
     }
 
-    // Filter books by author_id
     public List<Book> filterBooksByAuthor(int authorId) throws SQLException {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM book WHERE author_id = ?";
@@ -90,7 +88,7 @@ public class BookDAO {
         return books;
     }
 
-    // Filter books by category_id
+
     public List<Book> filterBooksByCategory(int categoryId) throws SQLException {
         List<Book> books = new ArrayList<>();
         String sql = "SELECT * FROM book WHERE category_id = ?";
@@ -105,7 +103,7 @@ public class BookDAO {
         return books;
     }
 
-    // Update Book
+  
     public void updateBook(Book book) throws SQLException {
         String sql = "UPDATE book SET title=?, author_id=?, category_id=?, price=?, quantity=?, description=? WHERE book_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
@@ -120,7 +118,6 @@ public class BookDAO {
         }
     }
 
-    // Delete Book
     public void deleteBook(int bookId) throws SQLException {
         String sql = "DELETE FROM book WHERE book_id=?";
         try (PreparedStatement pst = con.prepareStatement(sql)) {
@@ -129,7 +126,6 @@ public class BookDAO {
         }
     }
 
-    // Helper method to extract Book from ResultSet
     private Book extractBookFromResultSet(ResultSet rs) throws SQLException {
         Book book = new Book();
         book.setBookId(rs.getInt("book_id"));
