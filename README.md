@@ -154,4 +154,4 @@ GitHub: Sukanya-Wagh
 
 ## 📸 Final Output Screenshot
 
-![Output](https://github.com/Sukanya-Wagh/BookShopOnline/blob/main/output.PNG?raw=true)
+![Output](https://github.com/user-attachments/assets/72258ecf-e6ce-4e2d-9926-3175dda3cf6a)
