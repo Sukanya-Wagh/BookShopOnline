@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AuthorDAO {
 
-    // ➕ Add Author
+    
     public boolean addAuthor(Author author) {
         String sql = "INSERT INTO author (name) VALUES (?)";
         try (Connection conn = DBConnection.getConnection();
@@ -24,7 +24,6 @@ public class AuthorDAO {
         }
     }
 
-    // 📋 Get All Authors
     public List<Author> getAllAuthors() {
         List<Author> authors = new ArrayList<>();
         String sql = "SELECT * FROM author";
@@ -48,7 +47,7 @@ public class AuthorDAO {
         return authors;
     }
 
-    // ✏️ Update Author
+
     public boolean updateAuthor(Author author) {
         String sql = "UPDATE author SET name = ? WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -65,7 +64,7 @@ public class AuthorDAO {
         }
     }
 
-    // ❌ Delete Author
+    
     public boolean deleteAuthor(int id) {
         String sql = "DELETE FROM author WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
