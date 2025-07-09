@@ -144,19 +144,14 @@ Filter books accordingly
 💰 Revenue summary
 
 👩‍💻 Developer Info
+
 Name: Sukanya Wagh
-
 Email: waghsukanya153@gmail.com
-
 GitHub: Sukanya-Wagh
 
 🚀 Enjoy using the Online BookShop Project!
 
-## 📸 Final Output Screenshot
-`---
-
-🔚 Final Output (README मध्ये असे दिसेल):
 
 ## 📸 Final Output Screenshot
 
-![image alt](https://github.com/Sukanya-Wagh/BookShopOnline/blob/main/output.png?raw=true)
+![output](https://github.com/user-attachments/assets/1484d2bb-e8ec-4c59-8ea8-ecd7db7ec7ac)
