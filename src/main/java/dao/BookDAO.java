@@ -7,134 +7,62 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookDAO {
-    private Connection con;
+    private final Connection con;
 
     public BookDAO(Connection con) {
         this.con = con;
     }
 
-    
-    public void insertBook(Book book) throws SQLException {
-        String sql = "INSERT INTO book (title, author_id, category_id, price, quantity, description) VALUES (?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement pst = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            pst.setString(1, book.getTitle());
-            pst.setInt(2, book.getAuthorId());
-            pst.setInt(3, book.getCategoryId());
-            pst.setBigDecimal(4, book.getPrice());
-            pst.setInt(5, book.getQuantity());
-            pst.setString(6, book.getDescription());
-            pst.executeUpdate();
-
-            try (ResultSet rs = pst.getGeneratedKeys()) {
-                if (rs.next()) {
-                    book.setBookId(rs.getInt(1));
-                }
-            }
-        }
-    }
-
-    
-    public Book getBookById(int bookId) throws SQLException {
-        Book book = null;
-        String sql = "SELECT * FROM book WHERE book_id = ?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setInt(1, bookId);
-            try (ResultSet rs = pst.executeQuery()) {
-                if (rs.next()) {
-                    book = extractBookFromResultSet(rs);
-                }
-            }
-        }
-        return book;
-    }
-
-    
-    public List<Book> getAllBooks() throws SQLException {
-        List<Book> books = new ArrayList<>();
-        String sql = "SELECT * FROM book ORDER BY title";
-        try (Statement st = con.createStatement(); ResultSet rs = st.executeQuery(sql)) {
-            while (rs.next()) {
-                books.add(extractBookFromResultSet(rs));
-            }
-        }
-        return books;
-    }
-
-    public List<Book> searchBooksByTitle(String title) throws SQLException {
-        List<Book> books = new ArrayList<>();
-        String sql = "SELECT * FROM book WHERE title ILIKE ?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setString(1, "%" + title + "%");
-            try (ResultSet rs = pst.executeQuery()) {
-                while (rs.next()) {
-                    books.add(extractBookFromResultSet(rs));
-                }
-            }
-        }
-        return books;
-    }
-
-    public List<Book> filterBooksByAuthor(int authorId) throws SQLException {
-        List<Book> books = new ArrayList<>();
-        String sql = "SELECT * FROM book WHERE author_id = ?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setInt(1, authorId);
-            try (ResultSet rs = pst.executeQuery()) {
-                while (rs.next()) {
-                    books.add(extractBookFromResultSet(rs));
-                }
-            }
-        }
-        return books;
-    }
-
-
-    public List<Book> filterBooksByCategory(int categoryId) throws SQLException {
-        List<Book> books = new ArrayList<>();
-        String sql = "SELECT * FROM book WHERE category_id = ?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setInt(1, categoryId);
-            try (ResultSet rs = pst.executeQuery()) {
-                while (rs.next()) {
-                    books.add(extractBookFromResultSet(rs));
-                }
-            }
-        }
-        return books;
-    }
-
   
-    public void updateBook(Book book) throws SQLException {
-        String sql = "UPDATE book SET title=?, author_id=?, category_id=?, price=?, quantity=?, description=? WHERE book_id=?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setString(1, book.getTitle());
-            pst.setInt(2, book.getAuthorId());
-            pst.setInt(3, book.getCategoryId());
-            pst.setBigDecimal(4, book.getPrice());
-            pst.setInt(5, book.getQuantity());
-            pst.setString(6, book.getDescription());
-            pst.setInt(7, book.getBookId());
-            pst.executeUpdate();
+    public void insertBook(Book book) {
+        String sql = "INSERT INTO books (title, author_id, category_id, price, stock, description) " +
+                     "VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setString(1, book.getTitle());
+            ps.setInt(2, book.getAuthorId());
+            ps.setInt(3, book.getCategoryId());
+            ps.setDouble(4, book.getPrice());
+            ps.setInt(5, book.getStock());
+            ps.setString(6, book.getDescription());
+
+            int rowsInserted = ps.executeUpdate();
+            if (rowsInserted > 0) {
+                ResultSet rs = ps.getGeneratedKeys();
+                if (rs.next()) {
+                    book.setBookId(rs.getInt(1)); // set generated ID
+                }
+                System.out.println("Book inserted successfully.");
+            } else {
+                System.out.println(" Book insertion failed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
-    public void deleteBook(int bookId) throws SQLException {
-        String sql = "DELETE FROM book WHERE book_id=?";
-        try (PreparedStatement pst = con.prepareStatement(sql)) {
-            pst.setInt(1, bookId);
-            pst.executeUpdate();
-        }
-    }
+    public List<Book> getAllBooks() {
+        List<Book> books = new ArrayList<>();
+        String sql = "SELECT book_id, title, author_id, category_id, price, stock, description FROM books";
 
-    private Book extractBookFromResultSet(ResultSet rs) throws SQLException {
-        Book book = new Book();
-        book.setBookId(rs.getInt("book_id"));
-        book.setTitle(rs.getString("title"));
-        book.setAuthorId(rs.getInt("author_id"));
-        book.setCategoryId(rs.getInt("category_id"));
-        book.setPrice(rs.getBigDecimal("price"));
-        book.setQuantity(rs.getInt("quantity"));
-        book.setDescription(rs.getString("description"));
-        return book;
+        try (PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                Book book = new Book(
+                    rs.getString("title"),
+                    rs.getInt("author_id"),
+                    rs.getInt("category_id"),
+                    rs.getDouble("price"),
+                    rs.getInt("stock")
+                );
+                book.setBookId(rs.getInt("book_id"));
+                books.add(book);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return books;
     }
 }
