@@ -152,6 +152,6 @@ GitHub: Sukanya-Wagh
 
 🚀 Enjoy using the Online BookShop Project!
 
-## 📸 Final Output Screenshot
+## 📸 Output Screenshot
 
 ![Output](output.png)
