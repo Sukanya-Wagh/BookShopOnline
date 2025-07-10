@@ -35,6 +35,7 @@ A Java-based console application that simulates an online bookshop. Users can re
     <artifactId>postgresql</artifactId>
     <version>42.6.0</version>
 </dependency>
+```   
 
 🗃️ Database Tables
 
@@ -150,8 +151,6 @@ Email: waghsukanya153@gmail.com
 GitHub: Sukanya-Wagh
 
 🚀 Enjoy using the Online BookShop Project!
-
-
 ## 📸 Final Output Screenshot
-![Output](https://user-images.githubusercontent.com/153041035/236671964-3272c62d-f9d6-48b3-b17b-4d6a94369e0c.png)
 
+![Output](https://user-images.githubusercontent.com/153041035/236671964-3272c62d-f9d6-48b3-b17b-4d6a94369e0c.png)
