@@ -89,7 +89,7 @@ CREATE TABLE order_items (
 3)PostgreSQL
 
 4) Eclipse IDE / IntelliJ
-'''
+```
 OnlineBookshop/
 ├── Main.java
 ├── DBConnection.java
@@ -107,7 +107,7 @@ OnlineBookshop/
 │   ├── Book.java
 │   ├── Order.java
 │   └── OrderItem.java
-'''
+```
 
 🔧 Project Functionalities
 ✅ User & Admin Actions
