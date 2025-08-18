@@ -150,9 +150,7 @@ Search books by:
 
  Revenue summary
 
-
-
-
+---
 **Developer Info**
 
 Name: Sukanya Wagh
