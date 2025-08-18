@@ -81,7 +81,7 @@ CREATE TABLE order_items (
     price NUMERIC(10, 2) NOT NULL
 );
 ```
-⚙️ Prerequisites
+# Prerequisites
 1)Java JDK
 
 2) Apache Maven
@@ -140,7 +140,7 @@ Search books by:
 
  Category
 
-Filter books accordingly
+ Filter books accordingly
 
  Sales Reporting
  
@@ -151,12 +151,11 @@ Filter books accordingly
  Revenue summary
 
 
-``` Developer Info
+Developer Info
 
 Name: Sukanya Wagh
 Email: waghsukanya153@gmail.com
 GitHub: Sukanya-Wagh
-```
 
 📸 Output Screenshot:
 
