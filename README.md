@@ -151,11 +151,16 @@ Search books by:
  Revenue summary
 
 
+
+
 Developer Info
 
 Name: Sukanya Wagh
+
 Email: waghsukanya153@gmail.com
+
 GitHub: Sukanya-Wagh
+
 
 📸 Output Screenshot:
 
