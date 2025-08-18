@@ -157,8 +157,7 @@ Name: Sukanya Wagh
 Email: waghsukanya153@gmail.com
 GitHub: Sukanya-Wagh
 ```
-```
+
 📸 Output Screenshot:
 
 <img width="752" height="480" alt="Backend Output" src="https://github.com/user-attachments/assets/bb9bbc6c-24e0-4b73-87bd-b6750927393e" />
-```
