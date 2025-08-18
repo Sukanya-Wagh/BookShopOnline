@@ -107,7 +107,6 @@ OnlineBookshop/
 │   ├── Book.java
 │   ├── Order.java
 │   └── OrderItem.java
-
 '''
 
 🔧 Project Functionalities
