@@ -4,30 +4,30 @@ A Java-based console application that simulates an online bookshop. Users can re
 
 ---
 
-## ✨ Features
+✨ Features
 
-- 🧾 User Registration & Login System 
-- 📖 View Available Books – by category, author, or title  
-- 🛒 Add Books to Cart  
-- 📦 Place Orders  
-- 📜 View Order History  
-- 📊 Sales Report Generation  
-- 🛠️ Admin Options – Delete or Update Book Information  
-- 📋 Menu-Driven Console Interface  
-
----
-
-## 💻 Technologies Used
-
-- ☕ Core Java – OOP concepts, Collections  
-- 🔌 JDBC – Java Database Connectivity  
-- 🗄️ PostgreSQL – Relational Database  
-- 📦 Maven – Build & Dependency Management  
-- 🧠 Eclipse IDE  
+-  User Registration & Login System 
+-  View Available Books – by category, author, or title  
+-  Add Books to Cart  
+-  Place Orders  
+-  View Order History  
+-  Sales Report Generation  
+-  Admin Options – Delete or Update Book Information  
+-  Menu-Driven Console Interface  
 
 ---
 
-## 📦 Dependencies
+ 💻 Technologies Used
+
+-  Core Java – OOP concepts, Collections  
+-  JDBC – Java Database Connectivity  
+-  PostgreSQL – Relational Database  
+-  Maven – Build & Dependency Management  
+-  Eclipse IDE  
+
+---
+
+📦 Dependencies
 
 ```xml
 <dependency>
@@ -37,8 +37,8 @@ A Java-based console application that simulates an online bookshop. Users can re
 </dependency>
 ```   
 
-🗃️ Database Tables
-
+ Database Tables
+```
 CREATE TABLE user_details (
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
@@ -80,7 +80,7 @@ CREATE TABLE order_items (
     quantity INT NOT NULL,
     price NUMERIC(10, 2) NOT NULL
 );
-
+```
 ⚙️ Prerequisites
 1)Java JDK
 
@@ -110,7 +110,9 @@ OnlineBookshop/
 ```
 
 🔧 Project Functionalities
-✅ User & Admin Actions
+
+# User & Admin Actions
+
 Register, Login
 
 View books (by title, author, category)
@@ -123,38 +125,43 @@ Admin can add/update/delete books
 
 Admin can manage users
 
-📦 Order System
+# Order System
 Full order flow – including order_items handling
 
 Calculate total price, update stock
 
-🔍 Search & Filter
+ Search & Filter
+
 Search books by:
 
-🔤 Title
+ Title
 
-👤 Author
+ Author
 
-🗂️ Category
+ Category
 
 Filter books accordingly
 
-📊 Sales Reporting
-📈 Total sales per category
+ Sales Reporting
+ 
+ Total sales per category
 
-🏆 Best-selling books
+ Best-selling books
 
-💰 Revenue summary
+ Revenue summary
 
-👩‍💻 Developer Info
+```
+ Developer Info
 
 Name: Sukanya Wagh
 Email: waghsukanya153@gmail.com
 GitHub: Sukanya-Wagh
 
 🚀 Enjoy using the Online BookShop Project!
-
-## 📸 Output Screenshot:
+```
+```
+ 📸 Output Screenshot:
 
 <img width="752" height="480" alt="Menu Drive Screenshot" src="https://github.com/user-attachments/assets/bb9bbc6c-24e0-4b73-87bd-b6750927393e" />
 
+```
